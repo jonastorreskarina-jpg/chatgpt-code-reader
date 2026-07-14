@@ -4,8 +4,8 @@ const fs = require("fs");
 
 const app = express();
 
-const credentials = require("./credentials.json");
-const token = require("./token.json");
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+const token = JSON.parse(process.env.GOOGLE_TOKEN);
 
 const oauth2Client = new google.auth.OAuth2(
   credentials.web.client_id,
